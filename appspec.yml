@@ -5,7 +5,7 @@ files:
     destination: /home/ec2-user/myapp
 hooks:
     BeforeInstall:
-    - location: scripts/sapdemo1.sh
+    - location: scripts/sap_demo.sh
       timeout: 300
       runas: ec2-user
     AfterInstall:
