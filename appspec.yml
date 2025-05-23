@@ -3,11 +3,11 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/myapp
-hooks:
-    BeforeInstall:
+hooks: 
+    BeforeInstall: 
     - location: scripts/sap_demo.sh
       timeout: 300
-      runas: ec2-user
+      runas: root
     AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
