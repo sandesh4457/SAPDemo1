@@ -4,6 +4,10 @@ files:
   - source: .
     destination: /home/ec2-user/myapp
 hooks:
+    BeforeInstall:
+    - location: scripts/sapdemo1.sh
+      timeout: 300
+      runas: ec2-user
     AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
