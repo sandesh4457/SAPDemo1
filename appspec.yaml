@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/myapp
+hooks:
+  BeforeInstall:
+    - location: scripts/sapdemo1.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/sapdemo2.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/sapdemo3.sh
+      timeout: 300
+      runas: ec2-user
+  ValidateService:
+    - location: scripts/sapdemo4.sh
+      timeout: 300
+      runas: ec2-user
